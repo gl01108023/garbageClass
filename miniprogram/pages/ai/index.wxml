@@ -1,0 +1,33 @@
+<!--pages/ai/index.wxml-->
+<view class="cu-bar search" style="margin: 50rpx 0">
+  <view class="search-form round" style="background-color:#fff" bindtap="goSearch">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="请输入垃圾名称" confirm-type="search" bindinput="searchIcon"></input>
+    <text class="cuIcon-camera" bindtap='onBindCamera'></text>
+  </view>
+  <!-- <view class="action size">
+    <button class="cu-btn bg-blue shadow-blur round" bindtap="searchIcon">搜索</button>
+  </view> -->
+</view>
+<view>
+  <!-- <view class="cu-list grid col-3">
+      <view class="cu-item" wx:for="{{icon}}" wx:key wx:if="{{item.isShow}}">
+        <text class="cuIcon-{{item.name}} lg text-gray"></text>
+        <text>{{item.name}}</text>
+      </view>
+    </view> -->
+  <view class="cu-list">
+    <view class="cu-item" wx:for="{{icon}}" wx:key wx:if="{{item.isShow}}">
+      <view class="cu-bar bg-white">
+        <view class="action sub-title">
+          <text class="text-xl text-bold text-blue">{{item.name}}</text>
+          <text class="bg-gradual-blue" style="width:3rem"></text>
+          <!-- last-child选择器-->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cameraPP">
+  <image class="img" src='/images/cameraPP.jpg' bindtap='onBindCamera'></image>
+</view>

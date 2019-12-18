@@ -1,0 +1,17 @@
+/* pages/ai/index.wxss */
+
+.size{
+  width: 100rpx;
+}
+.cameraClass{
+  height: 400rpx;
+}
+.cameraPP{
+  margin: 0 auto;
+  padding-top: 250rpx;
+}
+.img {
+  width:200rpx;
+  height:200rpx;
+  border-radius:50% 
+}

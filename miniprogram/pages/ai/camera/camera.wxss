@@ -1,0 +1,11 @@
+
+.controls {
+  position: relative;
+  top: 5%;
+  display: flex;
+}
+.noticeTXT{
+  font-size: 10PX;
+  color: rgb(12, 242, 240);
+  text-align: center
+}
