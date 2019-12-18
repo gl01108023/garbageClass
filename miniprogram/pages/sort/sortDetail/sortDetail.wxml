@@ -1,5 +1,5 @@
 <!--pages/sort/sortDetail/sortDetail.wxml-->
-<scroll-view scroll-x class="bg-green light nav text-center">
+<scroll-view scroll-x class="bg-gradual-green nav text-center fixed">
   <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="{{1}}">
     可回收物
   </view>

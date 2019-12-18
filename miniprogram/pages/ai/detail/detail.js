@@ -153,7 +153,7 @@ Page({
   toStart: function() {
     //首页被tabBar所包含的页面必须使用wx.switchTab来跳转
     wx.switchTab({
-      url: '../index',
+      url: '../../sort/sort',
       fail: function(res) {
         wx.showToast({
           title: '跳转页面失败',

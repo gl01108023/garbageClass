@@ -12,7 +12,8 @@ Page({
     datas: [],
     type: 1,
     logo: "",
-    loading: false
+    loading: false,
+    toView:""
   },
 
   /**
@@ -101,6 +102,15 @@ Page({
         })
       }
     })
+  },
+  /**锚点定位 */
+  jumpTo: function () {
+    console.log("kjsadhfiousahdoisauiuio")
+    // 获取标签元素上自定义的 data-opt 属性的值
+    this.setData({
+      toView: "detail0"
+    })
+    console.log(this.data.toView)
   },
   /**
    * 上拉获取更多数据

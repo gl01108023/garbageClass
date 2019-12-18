@@ -39,4 +39,5 @@
       <text class="text-grey">停止录音</text>
     </view>
   </view>
+  <!-- <button bindtap="play" class='btn'>播放录音</button> -->
 </view>

@@ -2,7 +2,7 @@
 .img{
   height: 250rpx;
   border-radius: 25rpx;
-  margin: 25rpx 0;
+  margin-top: 100rpx;
   width: 100%;
 }
 .smallImg{
@@ -11,7 +11,7 @@
 }
 .tip{
   position: fixed;
-  top: 100rpx;
+  top: 400rpx;
   right: 15rpx;
   z-index: 10000;
   border-radius: 40rpx  40rpx 0 40rpx

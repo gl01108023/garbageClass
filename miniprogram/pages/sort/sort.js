@@ -7,6 +7,12 @@ Page({
   data: {
 
   },
+  toAR: function(){
+    wx.showToast({
+      title: '功能正在开发中，敬请期待。。。',
+      icon: "none"
+    })
+  },
   /**
    * 前往拍照页面
    */

@@ -22,3 +22,11 @@
   width: 300rpx;
   height: 300rpx;
 }
+.top{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  position: fixed;
+  bottom:100rpx;
+  right: 100rpx; 
+}

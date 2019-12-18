@@ -1,29 +1,41 @@
 /* pages/sort/sort.wxss */
-.sort{
+
+page {
+  height: 100%;
+}
+
+.sort {
   padding: 10rpx 20rpx;
   background-color: #fff;
+  height: 100%;
 }
-.img{
+
+.img {
   height: 400rpx;
   width: 100%;
+  border-radius: 10rpx;
 }
-.IMG{
+
+.IMG {
   width: 345rpx;
   height: 200rpx;
   margin: 4rpx;
   box-shadow: 4rpx 4rpx 2rpx #c6c6c6;
 }
-.buttonArea{
+
+.buttonArea {
   display: flex;
   justify-content: space-around;
-  padding: 20rpx 0;
+  padding-top: 40rpx;
 }
-.buttonImg{
-  width: 150rpx;
-  height: 150rpx;
-  padding-bottom: 10rpx; 
+
+.buttonImg {
+  width: 140rpx;
+  height: 145rpx;
+  padding-bottom: 10rpx;
 }
-.smallButton{
+
+.smallButton {
   height: 200rpx;
   display: flex;
   flex-direction: column;

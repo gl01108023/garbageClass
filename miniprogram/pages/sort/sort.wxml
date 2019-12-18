@@ -1,10 +1,23 @@
 <view class="sort">
   <view class="img_area">
-    <image src='/images/index_03.jpg' class="img"></image>
+    <swiper indicator-dots="true" indicator-color="white" indicator-active-color="gray" autoplay="true">
+      <swiper-item>
+        <image src='/images/banner.jpg' class="img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='/images/banner1.jpg' class="img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='/images/banner2.jpg' class="img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src='/images/banner3.jpg' class="img"></image>
+      </swiper-item>
+    </swiper>
   </view>
   <view class="buttonArea">
     <view class="smallButton">
-      <image src="/images/smallIcon_03.jpg" class="buttonImg"></image>
+      <image src="/images/smallIcon_03.jpg" class="buttonImg" bindtap="toAR"></image>
       <text>AR识别</text>
     </view>
     <view class="smallButton">
@@ -17,7 +30,7 @@
     </view>
     <view class="smallButton">
       <image src="/images/smallIcon_09.jpg" class="buttonImg" bindtap="toText"></image>
-      <text>文字识别</text>
+      <text>文字搜索</text>
     </view>
   </view>
   <view class="solid-bottom text-xl padding">
@@ -29,5 +42,4 @@
     <image src='/images/DRY.jpg' class="IMG" mode="widthFix" bindtap="sortDetail" data-index="3" style="margin-right:15rpx"></image>
     <image src='/images/WET.jpg' class="IMG" mode="widthFix" bindtap="sortDetail" data-index="4"></image>
   </view>
-  <image src="/images/banner.jpg" style="height:300rpx;border-radius:20rpx;width:100% "></image>
 </view>
