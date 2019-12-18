@@ -1,0 +1,16 @@
+<!--miniprogram/pages/sort/sortToDetail/sortToDetail.wxml-->
+<view class="sortToDetail" wx:for="{{datas}}" wx:key>
+  <view class="item-view bg-white" wx:if="{{index%2==0}}">
+    <image class="img" src='{{logo}}'></image>
+    <text>{{item.name}}</text>
+  </view>
+  <view class="item-view bg-gray" wx:else>
+    <image class="img" src='{{logo}}'></image>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+<view class="loading" wx:if="{{loading}}">
+  <view class="flex-sub radius shadow-lg">
+    <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="response"></image>
+  </view>
+</view>

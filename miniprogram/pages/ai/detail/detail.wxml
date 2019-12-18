@@ -1,0 +1,46 @@
+<block wx:if="{{isShow}}">
+  <view class="filter-view" wx:for="{{datas}}" wx:key bindtap="onClick" data-index="{{item.sortId}}">
+    <view class="item-view bg-white" wx:if="{{index%2==0}}">
+      <image wx:if="{{item.sortId==1}}" class="img" src='/images/Icon_03.jpg'></image>
+      <image wx:elif="{{item.sortId==2}}" class="img" src='/images/Icon_05.jpg'></image>
+      <image wx:elif="{{item.sortId==3}}" class="img" src='/images/Icon_09.jpg'></image>
+      <image wx:else="{{item.sortId==4}}" class="img" src='/images/Icon_10.jpg'></image>
+      <text>{{item.name}}</text>
+    </view>
+    <view class="item-view item-ji bg-grey" wx:else>
+      <image wx:if="{{item.sortId==1}}" class="img" src='/images/Icon_03.jpg'></image>
+      <image wx:elif="{{item.sortId==2}}" class="img" src='/images/Icon_05.jpg'></image>
+      <image wx:elif="{{item.sortId==3}}" class="img" src='/images/Icon_09.jpg'></image>
+      <image wx:else="{{item.sortId==4}}" class="img" src='/images/Icon_10.jpg'></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="solid-bottom text-center padding">
+    <image src="/images/no-result.png"></image>
+    <text class="text-black text-bold">没有查询到任何信息!</text>
+  </view>
+  <view class="padding flex flex-direction">
+    <button class="cu-btn bg-grey lg" bindtap="toStart">返回首页</button>
+    <button class="cu-btn bg-red margin-tb-sm lg" bindtap="toCamera">返回拍照页面</button>
+  </view>
+</block>
+
+<view class="cu-modal {{dialogModalShow?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" style="width:90%">
+    <view class="solid-bottom text-xl padding">
+      <view class="cu-avatar round" wx:if="{{logo}}" style="background-image:url({{logo}});"></view>
+      <text class="text-black text-bold padding">{{garbageContent}}</text>
+    </view>
+    <view class="solid-bottom text-sm padding">
+      <text class="text-grey">{{detailContent}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="loading" wx:if="{{loading}}">
+  <view class="flex-sub radius shadow-lg">
+    <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="response"></image>
+  </view>
+</view>

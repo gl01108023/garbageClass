@@ -1,33 +1,33 @@
 <!--pages/ai/index.wxml-->
 <view class="cu-bar search" style="margin: 50rpx 0">
-  <view class="search-form round" style="background-color:#fff" bindtap="goSearch">
+  <view class="search-form round search_bar" bindtap="goSearch">
     <text class="cuIcon-search"></text>
     <input type="text" placeholder="请输入垃圾名称" confirm-type="search" bindinput="searchIcon"></input>
-    <text class="cuIcon-camera" bindtap='onBindCamera'></text>
   </view>
-  <!-- <view class="action size">
-    <button class="cu-btn bg-blue shadow-blur round" bindtap="searchIcon">搜索</button>
-  </view> -->
 </view>
-<view>
-  <!-- <view class="cu-list grid col-3">
-      <view class="cu-item" wx:for="{{icon}}" wx:key wx:if="{{item.isShow}}">
-        <text class="cuIcon-{{item.name}} lg text-gray"></text>
-        <text>{{item.name}}</text>
-      </view>
-    </view> -->
-  <view class="cu-list">
-    <view class="cu-item" wx:for="{{icon}}" wx:key wx:if="{{item.isShow}}">
-      <view class="cu-bar bg-white">
-        <view class="action sub-title">
-          <text class="text-xl text-bold text-blue">{{item.name}}</text>
-          <text class="bg-gradual-blue" style="width:3rem"></text>
-          <!-- last-child选择器-->
-        </view>
+
+<view class="content">
+  <view class="topSerach">
+    <image src="/images/textSearch_03.jpg" class="serachImg"></image>
+    <view class="text-xl padding">
+      <text class="text-black text-bold">热门搜索</text>
+    </view>
+  </view>
+  <view class="detailContebt">
+    <view class="padding-sm flex flex-wrap">
+      <view class="padding-sm" wx:for="{{icon}}" wx:key>
+        <view class="cu-tag bg-grey light round padding" bindtap="goSearch" data-name="{{item.name}}">{{item.name}}</view>
       </view>
     </view>
   </view>
-</view>
-<view class="cameraPP">
-  <image class="img" src='/images/cameraPP.jpg' bindtap='onBindCamera'></image>
+  <view class="topSerach">
+    <image src="/images/textSearch_07.jpg" class="serachImg"></image>
+    <view class="text-xl padding">
+      <text class="text-black text-bold">历史记录</text>
+    </view>
+    <image src="/images/textSearch_09.jpg" class="trachImg"></image>
+  </view>
+  <view class="record text-lg padding-xl">
+    <text class="text-grey">暂无搜索记录</text>
+  </view>
 </view>

@@ -1,0 +1,26 @@
+/* miniprogram/pages/sort/voice/voice.wxss */
+
+page {
+  height: 100%;
+}
+
+.voice {
+  background: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100rpx;
+}
+
+.voiceButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx 0;
+}
+
+.voiceImg {
+  width: 200rpx;
+  height: 200rpx;
+}

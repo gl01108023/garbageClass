@@ -1,0 +1,140 @@
+<!--pages/sort/sortDetail/sortDetail.wxml-->
+<scroll-view scroll-x class="bg-green light nav text-center">
+  <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="{{1}}">
+    可回收物
+  </view>
+  <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="{{2}}">
+    有害垃圾
+  </view>
+  <view class="cu-item {{3==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="{{3}}">
+    干垃圾
+  </view>
+  <view class="cu-item {{4==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="{{4}}">
+    湿垃圾
+  </view>
+</scroll-view>
+<view class="tip bg-grey text-center light padding-sm" bindtap="seeDetail" data-index="{{TabCur}}">
+  <view class="text-blue text-center">看看</view>
+</view>
+<view wx:if="{{1==TabCur}}" class="padding">
+  <image src="/images/RECYCLABLE_03.jpg" class="img"></image>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">投放要求</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 轻投轻放，清洁干燥，避免污染</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 废纸尽量平整</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 立体包装物请清空内容物,清洁后压扁投放</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 有尖锐边角的,应包裹后投放</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">处置方法</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 尽量保持清洁,牛奶盒、玻璃瓶、熟料瓶、食品孰料托盘等可以简单清洗沥干并压扁</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 投放时可按照材质分别打包，单独投放至社区专门的可回收物桶中</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">常见物品</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 主要包括废纸、塑料、玻璃、金属和布料五大类</text>
+  </view>
+</view>
+<view wx:if="{{2==TabCur}}" class="padding">
+  <image src="/images/HARMFUL_03.jpg" class="img"></image>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">投放要求</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 充电电池、纽扣电池、蓄电池投放时应注意轻放</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 油漆桶、杀虫剂如果残存请密闭后投放</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 荧光灯、节能灯易破损连带包装或包裹后投放</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 非药品及其包装一并投放</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">处置方法</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 单独投放至社区的有害桶中</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 在有专门的品类回收箱的地区，按具体分类投放</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">常见物品</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 包括废电池、废日关灯管、废水银温度计、过期药品等</text>
+  </view>
+</view>
+<view wx:if="{{3==TabCur}}" class="padding">
+  <image src="/images/DAY_03.jpg" class="img"></image>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">投放要求</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 投放前尽量沥干水分</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 难以辨别的生活垃圾，投入干垃圾收集容器</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">处置方法</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 扔垃圾前进行正确的分类</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 扔垃圾时放入指定的位置</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">常见物品</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 包括废弃的纸张、塑料、玻璃、金属、织物等，还包括报废车辆、家电家具、装修废弃物等大型垃圾</text>
+  </view>
+</view>
+<view wx:if="{{4==TabCur}}" class="padding">
+  <image src="/images/WET_03.jpg" class="img"></image>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">投放要求</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 盛放湿垃圾的容器如塑料袋等，投放时应予去除</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 投放前尽量沥干水分</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 有包装物的湿垃圾应将包装物去除后分类投放</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">处置方法</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 单独投放至社区专门的湿垃圾（厨余垃圾）桶中，被单独收集与运输后，可以通过加工饲料、集中堆肥、发酵、生物处理等方式再利用</text>
+  </view>
+  <view class="solid-bottom text-xl">
+    <text class="text-black text-bold">常见物品</text>
+  </view>
+  <view class="bg-white margin">
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 过期食品：糕饼、糖果、肉干、红枣、中药材、冲泡饮料、面粉、宠物饲料等</text>
+    <text class="block padding text-black">
+    <text class="cuIcon-roundright"></text> 瓜皮果核：火锅汤底、鱼骨、碎骨、茶叶渣、咖啡渣、中药药渣</text>
+  </view>
+</view>

@@ -7,60 +7,57 @@ Page({
   data: {
 
   },
-
   /**
-   * 生命周期函数--监听页面加载
+   * 前往拍照页面
    */
-  onLoad: function (options) {
-
+  toCamera: function(){
+    wx.navigateTo({
+      url: '../ai/camera/camera',
+    })
   },
-
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 前往语音搜索页面
    */
-  onReady: function () {
-
+  toVoice: function () {
+    wx.navigateTo({
+      url: 'voice/voice',
+    })
   },
-
   /**
-   * 生命周期函数--监听页面显示
+   * 前往文字识别页面
    */
-  onShow: function () {
-
+  toText: function () {
+    wx.navigateTo({
+      url: '../ai/search/search',
+    })
   },
-
   /**
-   * 生命周期函数--监听页面隐藏
+   * 根据定义好的val 判断垃圾类型并显示
    */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  sortDetail: function(event) {
+    var index = event.currentTarget.dataset.index
+    switch (parseInt(index)) {
+      case 1:
+        console.log("可回收垃圾")
+        wx.navigateTo({
+          url: 'sortDetail/sortDetail?TabCur=' + 1,
+        })
+        break;
+      case 2:
+        wx.navigateTo({
+          url: 'sortDetail/sortDetail?TabCur=' + 2,
+        })
+        break;
+      case 3:
+        wx.navigateTo({
+          url: 'sortDetail/sortDetail?TabCur=' + 3,
+        })
+        break;
+      case 4:
+        wx.navigateTo({
+          url: 'sortDetail/sortDetail?TabCur=' + 4,
+        })
+        break;
+    }
   }
 })

@@ -1,0 +1,18 @@
+/* pages/sort/sortDetail/sortDetail.wxss */
+.img{
+  height: 250rpx;
+  border-radius: 25rpx;
+  margin: 25rpx 0;
+  width: 100%;
+}
+.smallImg{
+  width: 40rpx;
+  height: 40rpx;
+}
+.tip{
+  position: fixed;
+  top: 100rpx;
+  right: 15rpx;
+  z-index: 10000;
+  border-radius: 40rpx  40rpx 0 40rpx
+}

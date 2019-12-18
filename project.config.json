@@ -2,12 +2,22 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"appid": "wx7493f1971afeda9b",
 	"projectname": "garbageClass",
@@ -125,6 +135,48 @@
 					"id": -1,
 					"name": "pages/ai/search/search",
 					"pathName": "pages/ai/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ai/camera/camera",
+					"pathName": "pages/ai/camera/camera",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ai/detail/detail",
+					"pathName": "pages/ai/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sort/sort",
+					"pathName": "pages/sort/sort",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sort/sortDetail/sortDetail",
+					"pathName": "pages/sort/sortDetail/sortDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sort/sortToDetail/sortToDetail",
+					"pathName": "pages/sort/sortToDetail/sortToDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sort/voice/voice",
+					"pathName": "pages/sort/voice/voice",
 					"scene": null
 				}
 			]

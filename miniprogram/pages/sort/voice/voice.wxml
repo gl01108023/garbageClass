@@ -1,0 +1,36 @@
+<!--miniprogram/pages/sort/voice/voice.wxml-->
+<view class="voice">
+  <view class="text-xxl">
+    <text class="text-black text-bold">请点击下面的麦克风</text>
+  </view>
+  <view class="text-xxl padding-sm">
+    <text class="text-black text-bold">说出您要分类的垃圾</text>
+  </view>
+  <view class="text-lg padding">
+    <text class="text-grey">您可以这样说</text>
+  </view>
+  <view class="text-lg padding-sm">
+    <text class="text-grey">“ 纸巾 ”</text>
+  </view>
+  <view class="text-lg padding-sm">
+    <text class="text-grey">“ 龙虾壳 ”</text>
+  </view>
+  <view class="text-lg padding-sm">
+    <text class="text-grey">“ 温度计 ”</text>
+  </view>
+  <view class="text-lg padding-sm">
+    <text class="text-grey">“ 外卖盒 ”</text>
+  </view>
+  <view class="text-lg padding-sm">
+    <text class="text-grey">“ 茶叶 ”</text>
+  </view>
+  <view class="text-lg padding-sm">
+    <text class="text-grey">“ 蓄电池 ”</text>
+  </view>
+  <view class="voiceButton">
+    <image src="/images/voice_03.jpg" class="voiceImg"></image>
+    <view class="text-xl padding-sm">
+      <text class="text-grey">点击说话</text>
+    </view>
+  </view>
+</view>

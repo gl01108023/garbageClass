@@ -1,2 +1,33 @@
-<!--pages/sort/sort.wxml-->
-<text>pages/sort/sort.wxml</text>
+<view class="sort">
+  <view class="img_area">
+    <image src='/images/index_03.jpg' class="img"></image>
+  </view>
+  <view class="buttonArea">
+    <view class="smallButton">
+      <image src="/images/smallIcon_03.jpg" class="buttonImg"></image>
+      <text>AR识别</text>
+    </view>
+    <view class="smallButton">
+      <image src="/images/smallIcon_05.jpg" class="buttonImg" bindtap="toCamera"></image>
+      <text>拍照识别</text>
+    </view>
+    <view class="smallButton">
+      <image src="/images/smallIcon_07.jpg" class="buttonImg" bindtap="toVoice"></image>
+      <text>语音搜索</text>
+    </view>
+    <view class="smallButton">
+      <image src="/images/smallIcon_09.jpg" class="buttonImg" bindtap="toText"></image>
+      <text>文字识别</text>
+    </view>
+  </view>
+  <view class="solid-bottom text-xl padding">
+    <text class="text-black text-bold">垃圾分类</text>
+  </view>
+  <view class="bg-white" style="width:100%;padding:20rpx 0">
+    <image src='/images/RECYCLABLE.jpg' class="IMG" bindtap="sortDetail" mode="widthFix" data-index="1" style="margin-right:15rpx"></image>
+    <image src='/images/HARMFUL.jpg' class="IMG" mode="widthFix" bindtap="sortDetail" data-index="2"></image>
+    <image src='/images/DRY.jpg' class="IMG" mode="widthFix" bindtap="sortDetail" data-index="3" style="margin-right:15rpx"></image>
+    <image src='/images/WET.jpg' class="IMG" mode="widthFix" bindtap="sortDetail" data-index="4"></image>
+  </view>
+  <image src="/images/banner.jpg" style="height:300rpx;border-radius:20rpx;width:100% "></image>
+</view>

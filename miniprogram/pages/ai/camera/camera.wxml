@@ -4,17 +4,17 @@
   <image style="width: 100%; height:100%;" wx:else mode="widthFix" src="{{src}}"></image>
 </view>
 <view class="margin-tb-sm text-center">
-  <button class="cu-btn round bg-blue" bindtap="takePhoto">拍照</button>
+  <button class="cu-btn round bg-blue" bindtap="takePhoto">{{btnText}}</button>
 </view>
 
 <view class="cu-modal {{isShow?'show':''}}" bindtap="hideModal">
   <view class="cu-dialog" catchtap>
-    <radio-group class="block">
+    <radio-group class="block" bindchange="radioChange">
       <view class="cu-list menu text-left">
         <view class="cu-item" wx:for="{{results}}" wx:key>
           <label class="flex justify-between align-center flex-sub">
             <view class="flex-sub">{{item.keyword}}</view>
-            <radio class="round" value="{{item.keyword}}"></radio>
+            <radio class="round blue" value="{{item.keyword}}"></radio>
           </label>
         </view>
       </view>

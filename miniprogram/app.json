@@ -1,30 +1,34 @@
 {
   "pages": [
-    "pages/ai/index",
     "pages/sort/sort",
+    "pages/ai/index",
     "pages/ai/camera/camera",
-    "pages/ai/search/search"
+    "pages/ai/search/search",
+    "pages/ai/detail/detail",
+    "pages/sort/sortDetail/sortDetail",
+    "pages/sort/sortToDetail/sortToDetail",
+    "pages/sort/voice/voice"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#4169E1",
+    "navigationBarBackgroundColor": "#00cc77",
     "navigationBarTitleText": "垃圾分类",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/ai/index",
-        "text": "识别",
-        "iconPath": "images/plugin.png",
-        "selectedIconPath": "images/plugin_cur.png"
-      },
-      {
         "pagePath": "pages/sort/sort",
         "text": "分类",
         "iconPath": "images/basics.png",
         "selectedIconPath": "images/basics_cur.png"
+      },
+      {
+        "pagePath": "pages/ai/index",
+        "text": "识别",
+        "iconPath": "images/plugin.png",
+        "selectedIconPath": "images/plugin_cur.png"
       }
     ]
   },
