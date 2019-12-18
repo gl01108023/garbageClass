@@ -1,11 +1,12 @@
 // miniprogram/pages/sort/voice/voice.js
+const recorderManager = wx.getRecorderManager();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    isStop:false
   },
 
   /**
@@ -16,7 +17,6 @@ Page({
   },
   /** 录音开始 */
   clickSay: function (e, that){
-    const recorderManager = wx.getRecorderManager();
     const options = {
       duration: 10000,
       sampleRate: 16000,
@@ -44,5 +44,9 @@ Page({
         console.log("语音识别失败");
       }
     })
+  },
+  /**停止录音 */
+  clickStop:function(){
+    recorderManager.stop();
   }
 })

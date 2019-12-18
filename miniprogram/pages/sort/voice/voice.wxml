@@ -27,10 +27,16 @@
   <view class="text-lg padding-sm">
     <text class="text-grey">“ 蓄电池 ”</text>
   </view>
-  <view class="voiceButton">
+  <view class="voiceButton" wx:if="{{!isStop}}">
     <image src="/images/voice_03.jpg" class="voiceImg" bindtap="clickSay"></image>
     <view class="text-xl padding-sm">
       <text class="text-grey">点击说话</text>
+    </view>
+  </view>
+  <view class="voiceButton" wx:else>
+    <image src="/images/voice_03.jpg" class="voiceImg" bindtap="clickStop"></image>
+    <view class="text-xl padding-sm">
+      <text class="text-grey">停止录音</text>
     </view>
   </view>
 </view>

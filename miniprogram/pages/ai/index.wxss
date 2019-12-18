@@ -1,5 +1,7 @@
 /* pages/ai/index.wxss */
-
+page{
+  height: 100%;
+}
 .size{
   width: 100rpx;
 }
@@ -18,7 +20,8 @@
 }
 .content {
   background-color: #fff;
-  padding: 30rpx 20rpx;
+  padding: 0 20rpx;
+  height: 100%
 }
 
 .topSerach {
