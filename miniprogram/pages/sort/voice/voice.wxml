@@ -28,7 +28,7 @@
     <text class="text-grey">“ 蓄电池 ”</text>
   </view>
   <view class="voiceButton">
-    <image src="/images/voice_03.jpg" class="voiceImg"></image>
+    <image src="/images/voice_03.jpg" class="voiceImg" bindtap="clickSay"></image>
     <view class="text-xl padding-sm">
       <text class="text-grey">点击说话</text>
     </view>
