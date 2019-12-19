@@ -13,7 +13,7 @@ Page({
     type: 1,
     logo: "",
     loading: false,
-    toView:""
+    showGoTop: false
   },
 
   /**
@@ -48,7 +48,7 @@ Page({
     this.setData({
       logo: logoImg
     })
-    var that = this
+    let that = this
     db.collection('product').where({
       sortId: parseInt(this.data.type)
     }).count({
@@ -57,6 +57,31 @@ Page({
       }
     })
     this.onGetData()
+  },
+  // 获取滚动条当前位置，并显隐按钮
+  onPageScroll: function (e) {
+    if (e.scrollTop < 200) {
+      this.setData({
+        showGoTop: true
+      })
+    } else {
+      this.setData({
+        showGoTop: false
+      })
+    }
+  },
+  // 回到顶部
+  goTop: function (e) {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
   },
   /**
    * 云数据库请求
@@ -103,24 +128,15 @@ Page({
       }
     })
   },
-  /**锚点定位 */
-  jumpTo: function () {
-    console.log("kjsadhfiousahdoisauiuio")
-    // 获取标签元素上自定义的 data-opt 属性的值
-    this.setData({
-      toView: "detail0"
-    })
-    console.log(this.data.toView)
-  },
   /**
-   * 上拉获取更多数据
+   * 下拉刷新
    */
   onPullDownRefresh: function () {
     this.data.page = 0
     this.onGetData()
   },
   /**
-   * 下拉刷新
+   * 上滑加载更多数据
    */
   onReachBottom: function () {
     this.onGetData()

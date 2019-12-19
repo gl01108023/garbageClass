@@ -1,17 +1,15 @@
 <!--miniprogram/pages/sort/sortToDetail/sortToDetail.wxml-->
-<scroll-view scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
-  <view class="sortToDetail" wx:for="{{datas}}" wx:key id="detail{{index}}">
-    <view class="item-view bg-white" wx:if="{{index%2==0}}">
-      <image class="img" src='{{logo}}'></image>
-      <text>{{item.name}}</text>
-    </view>
-    <view class="item-view bg-gray" wx:else>
-      <image class="img" src='{{logo}}'></image>
-      <text>{{item.name}}</text>
-    </view>
+<view class="sortToDetail" wx:for="{{datas}}" wx:key>
+  <view class="item-view bg-white" wx:if="{{index%2==0}}">
+    <image class="img" src='{{logo}}'></image>
+    <text>{{item.name}}</text>
   </view>
-</scroll-view>
-<image src="/images/top.jpg" class="top" bindtap='jumpTo'></image>
+  <view class="item-view bg-gray" wx:else>
+    <image class="img" src='{{logo}}'></image>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+<image src="/images/top.jpg" hidden="{{showGoTop}}" class="top" bindtap='goTop'></image>
 <view class="loading" wx:if="{{loading}}">
   <view class="flex-sub radius shadow-lg">
     <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="response"></image>
