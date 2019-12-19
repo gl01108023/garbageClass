@@ -1,5 +1,6 @@
 <!--miniprogram/pages/sort/voice/voice.wxml-->
 <view class="voice">
+  <progress strokeWidth="4" percent="{{value}}" wx:if="{{showPg}}"></progress>
   <view class="text-xxl">
     <text class="text-black text-bold">请点击下面的麦克风</text>
   </view>
@@ -27,17 +28,9 @@
   <view class="text-lg padding-sm">
     <text class="text-grey">“ 蓄电池 ”</text>
   </view>
-  <view class="voiceButton" wx:if="{{!isStop}}">
-    <image src="/images/voice_03.jpg" class="voiceImg" bindtap="clickSay"></image>
-    <view class="text-xl padding-sm">
-      <text class="text-grey">点击说话</text>
-    </view>
-  </view>
-  <view class="voiceButton" wx:else>
-    <image src="/images/voice_03.jpg" class="voiceImg" bindtap="clickStop"></image>
-    <view class="text-xl padding-sm">
-      <text class="text-grey">停止录音</text>
-    </view>
+  <view class="dot {{isTouchStart==true?'dot-blowup':''}} {{isTouchEnd==true?'dot-zoomout':''}}" style="display:{{isDot}}"></view>
+  <view class="record" bindtouchstart="recordStart" bindtouchend="recordTerm">
+    <image mode="widthFix" src="/images/voice.png"></image>
   </view>
   <!-- <button bindtap="play" class='btn'>播放录音</button> -->
 </view>

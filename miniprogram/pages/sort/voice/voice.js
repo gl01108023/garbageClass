@@ -1,18 +1,23 @@
 // miniprogram/pages/sort/voice/voice.js
 const recorderManager = wx.getRecorderManager();
 const innerAudioContext = wx.createInnerAudioContext();
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isStop: false,
     tempFilePath: "",
     size: 0,
     accessToken: "",
-    result: []
+    result: [],
+    hasRecord: false,
+    isDot: "block",
+    isTouchStart: false,
+    isTouchEnd: false,
+    value: '100',
+    touchStart: 0,
+    touchEnd: 0,
   },
 
   /**
@@ -31,6 +36,30 @@ Page({
         accessToken: wx.getStorageSync("access_token")
       })
     }
+    var a = this;
+    wx.authorize({
+      scope: "scope.record",
+      success: function() {
+        console.log("录音授权成功");
+      },
+      fail: function() {
+        console.log("录音授权失败");
+      }
+    }), a.onShow()
+  },
+  // 点击录音按钮
+  onRecordClick: function() {
+    wx.getSetting({
+      success: function(t) {
+        console.log(t.authSetting),
+        t.authSetting["scope.record"] ? console.log("已授权录音") : (console.log("未授权录音"),
+        wx.openSetting({
+          success: function(t) {
+            console.log(t.authSetting);
+          }
+        }));
+      }
+    });
   },
   /**
    * 一般Access Token的有效期(秒为单位，一般为1个月),所以请求可能随时会发生,所以要异步方法；
@@ -55,10 +84,8 @@ Page({
     })
   },
   /** 录音开始 */
-  clickSay: function(e, that) {
-    this.setData({
-      isStop: true
-    })
+  recordStart: function(e, that) {
+    var n = this;
     const options = {
       duration: 10000,
       sampleRate: 16000,
@@ -68,13 +95,40 @@ Page({
       frameSize: 50
     }
     recorderManager.start(options);
+    n.setData({
+      touchStart: e.timeStamp,
+      isTouchStart: true,
+      isTouchEnd: false,
+      showPg: true,
+    })
+    var a = 15,
+      o = 10;
+    this.timer = setInterval(function() {
+      n.setData({
+        value: n.data.value - 100 / 1500
+      }), (o += 10) >= 1e3 && o % 1e3 == 0 && (a--, console.log(a), a <= 0 && (recorderManager.stop(),
+        clearInterval(n.timer), n.animation2.scale(1, 1).step(), n.setData({
+          animationData: n.animation2.export(),
+          showPg: false,
+        })));
+    }, 10);
+  },
+  /**
+   * 长按录音结束
+   */
+  recordTerm: function(e) {
+    recorderManager.stop();
+    this.clickStop();
+    this.setData({
+      isTouchEnd: true,
+      isTouchStart: false,
+      touchEnd: e.timeStamp,
+      showPg: false,
+      value: 100
+    }), clearInterval(this.timer);
   },
   /**停止录音 */
   clickStop: function() {
-    recorderManager.stop();
-    this.setData({
-      isStop: false
-    })
     var that = this
     recorderManager.onStop((res) => {
       console.log('停止录音', res.tempFilePath)
@@ -136,11 +190,11 @@ Page({
       data: {
         "format": "pcm",
         "rate": 16000,
-        "dev_pid": 1536,
+        "dev_pid": 1537,
         "channel": 1,
         "token": accessToken,
         "cuid": "68-F7-28-F3-35-26",
-        "len": size,
+        "len": parseInt(size),
         "speech": voice, // xxx为 base64（FILE_CONTENT）
       },
       header: {
