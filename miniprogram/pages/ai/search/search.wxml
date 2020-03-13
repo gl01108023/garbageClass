@@ -34,7 +34,9 @@
   <view class="cu-dialog">
     <view class="cu-bar bg-white solid-bottom">
       <view class="action"></view>
-      <view class="action text-green" bindtap="seeDetail">查看</view>
+      <view class="action">
+        <button class="cu-btn round bg-green shadow button-see" bindtap="seeDetail">查看</button>
+      </view>
     </view>
     <view class="padding-sm bg-white">
       <view class="text-xl">
