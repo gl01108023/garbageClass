@@ -177,6 +177,13 @@
 					"id": -1,
 					"name": "pages/sort/voice/voice",
 					"pathName": "pages/sort/voice/voice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ai/index",
+					"pathName": "pages/ai/index",
 					"scene": null
 				}
 			]
